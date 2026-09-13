@@ -1,7 +1,6 @@
 cv:
   name: Matthias Kellner
   label: PhD Student in Computational Materials Science
-  email: matthias.kellner@epfl.ch
   location: Lausanne, Switzerland
   website: https://kellner.science
   image: ""
@@ -95,13 +94,6 @@ cv:
       - bullet: "**EPFL** - MSE-421 Statistical Thermodynamics (2025), teaching assistant."
       - bullet: "**ICTP-MARVEL summer school** (2026), tutor."
       - bullet: "**TUM** - Python programming for chemistry students (2022), tutor."
-
-    Supervision and Mentoring:
-      - bullet: "I regularly supervise master's project students at labCOSMO for semester projects and summer internships."
-      - bullet: "Enrico Palermo, EPFL."
-      - bullet: "Yuxuan Zhang (formerly Hong Kong University, now University of Oxford), co-author of the ShiftML3 publication."
-      - bullet: "Aurélien Wohrer (formerly EPFL, now master's project at EMPA)."
-      - bullet: "Seiio Inoue (University of Tokyo), co-author of the QNC-NMR publication."
 
     Outreach, Service and Reviewing:
       - label: Industrial outreach

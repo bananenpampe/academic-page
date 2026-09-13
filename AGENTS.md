@@ -11,7 +11,7 @@ This repository is **Matthias Kellner's personal website**, created from the [al
 | Research projects                                     | `_projects/*.md` (`giscus_comments: true` enables the comment section)              |
 | Publications                                          | `_bibliography/papers.bib` (`selected={true}` shows a paper on the landing page)    |
 | CV                                                    | `_data/cv.yml` (web version) and `assets/pdf/CV.pdf` (download)                     |
-| Socials, featured repositories                        | `_data/socials.yml`, `_data/repositories.yml`                                       |
+| Socials                                               | `_data/socials.yml`                                                                 |
 | Site settings, feature flags, giscus IDs, plugin list | `_config.yml` (plugins must also be pinned in the `Gemfile`)                        |
 | Theme runtime (layouts, includes, Sass, tags)         | the owning `al_*` gem (see `docs/BOUNDARIES.md`); override locally only when needed |
 

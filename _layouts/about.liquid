@@ -9,6 +9,10 @@ layout: default
     page, mirroring the banner used on my social profiles.
   - Ships the styles for the banner and for the "Try my work on the web" card used
     in _pages/about.md.
+  - Pipes the page content, the profile info, the social bar and the contact note
+    through al_email_protect's rewrite filter, so every mailto: link on the landing
+    page is split at build time when `protect_email: true` (no plaintext address
+    in the HTML for harvesters).
 
   Everything else is kept identical to the gem so future gem upgrades are easy to
   port. Re-run `bundle exec al-folio upgrade overrides audit` after bumping al_folio_core.
@@ -117,12 +121,12 @@ layout: default
           %}
         {% endif %}
         {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
+          <div class="more-info">{{ page.profile.more_info | al_email_protect_html }}</div>
         {% endif %}
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    <div class="clearfix">{{ content | al_email_protect_html }}</div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
@@ -151,9 +155,10 @@ layout: default
     <!-- Social -->
     {% if page.social %}
       <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
+        {% capture social_links_html %}{% social_links %}{% endcapture %}
+        <div class="contact-icons">{{ social_links_html | al_email_protect_html }}</div>
 
-        <div class="contact-note">{{ site.contact_note }}</div>
+        <div class="contact-note">{{ site.contact_note | al_email_protect_html }}</div>
       </div>
     {% endif %}
 

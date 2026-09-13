@@ -12,7 +12,6 @@ Source of my personal academic webpage, [kellner.science](https://kellner.scienc
 | Publications            | [`_bibliography/papers.bib`](_bibliography/papers.bib)                          |
 | CV (web version)        | [`_data/cv.yml`](_data/cv.yml); PDF in [`assets/pdf/CV.pdf`](assets/pdf/CV.pdf) |
 | Social links            | [`_data/socials.yml`](_data/socials.yml)                                        |
-| Featured repositories   | [`_data/repositories.yml`](_data/repositories.yml)                              |
 | Site-wide settings      | [`_config.yml`](_config.yml)                                                    |
 | Banner / profile images | [`assets/img/`](assets/img/)                                                    |
 
