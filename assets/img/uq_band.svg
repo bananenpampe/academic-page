@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Prediction with uncertainty band">
+  <rect width="600" height="400" fill="#ffffff"/>
+  <!-- uncertainty band -->
+  <path d="M40 235 C 120 205, 170 195, 230 205 S 330 250, 400 210 S 500 120, 560 150 L 560 240 C 500 210, 460 290, 400 300 S 320 330, 230 290 S 120 260, 40 285 Z" fill="#facd13" fill-opacity="0.35"/>
+  <!-- ensemble members -->
+  <g fill="none" stroke="#f0b400" stroke-width="2" stroke-opacity="0.6">
+    <path d="M40 250 C 120 225, 170 215, 230 225 S 330 270, 400 240 S 500 170, 560 190"/>
+    <path d="M40 270 C 120 240, 170 235, 230 250 S 330 300, 400 270 S 500 210, 560 215"/>
+    <path d="M40 245 C 120 215, 170 205, 230 240 S 330 255, 400 225 S 500 150, 560 175"/>
+    <path d="M40 275 C 120 245, 170 250, 230 260 S 330 310, 400 275 S 500 200, 560 205"/>
+  </g>
+  <!-- mean prediction -->
+  <path d="M40 260 C 120 230, 170 225, 230 245 S 330 285, 400 255 S 500 180, 560 195" fill="none" stroke="#2f6fd6" stroke-width="5" stroke-linecap="round"/>
+  <!-- reference points -->
+  <g fill="#2f6fd6" stroke="#ffffff" stroke-width="2">
+    <circle cx="90" cy="242" r="7"/>
+    <circle cx="180" cy="228" r="7"/>
+    <circle cx="270" cy="262" r="7"/>
+    <circle cx="360" cy="270" r="7"/>
+    <circle cx="450" cy="215" r="7"/>
+    <circle cx="530" cy="200" r="7"/>
+  </g>
+  <!-- axes -->
+  <path d="M40 40 L40 360 L560 360" fill="none" stroke="#9aa3ad" stroke-width="2"/>
+</svg>

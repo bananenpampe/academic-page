@@ -1,9 +1,22 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+# Optional per-venue links and colors used in the publication list.
+# Keys must match the `journal` / `booktitle` field of the BibTeX entry.
+"Nature Communications":
+  url: https://www.nature.com/ncomms/
 
-"PhysRev":
-  url: https://journals.aps.org/
+"Journal of Chemical Theory and Computation":
+  url: https://pubs.acs.org/journal/jctcce
 
-"Vision":
-  color: "#009f36"
+"The Journal of Physical Chemistry Letters":
+  url: https://pubs.acs.org/journal/jpclcd
+
+"The Journal of Chemical Physics":
+  url: https://pubs.aip.org/aip/jcp
+
+"Machine Learning: Science and Technology":
+  url: https://iopscience.iop.org/journal/2632-2153
+
+"Faraday Discussions":
+  url: https://pubs.rsc.org/en/journals/journalissues/fd
+
+"Digital Discovery":
+  url: https://pubs.rsc.org/en/journals/journalissues/dd

@@ -1,189 +1,117 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
+  name: Matthias Kellner
+  label: PhD Student in Computational Materials Science
+  email: matthias.kellner@epfl.ch
+  location: Lausanne, Switzerland
+  website: https://kellner.science
   image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  summary: >-
+    I develop machine-learning methods for atomistic simulation, with a focus on uncertainty quantification.
+    I am interested in determining when a model's predictions can be trusted and when they cannot, which is a
+    question central to deploying ML reliably in the physical sciences. I am also involved in the development of
+    universal machine learning potentials. I have developed the universal PET-MOLS model and applied it to study
+    amorphously formulated active pharmaceutical ingredients. I also build deep-learning models for predicting NMR
+    chemical shieldings (ShiftML), which I make available to the wider chemistry community.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: bananenpampe
     - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+      username: matthias-kellner
+    - network: X
+      username: LinusKellner
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
+      - institution: EPFL Lausanne, labCOSMO
+        location: Lausanne, Switzerland
+        url: https://www.epfl.ch/labs/cosmo/
+        area: Materials Science
         studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+        start_date: 2023
+        end_date: present
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Advisor: Prof. Michele Ceriotti."
+          - Expected graduation in 2027.
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: Technical University of Munich
+        location: Munich, Germany
+        url: https://www.tum.de/
+        area: Chemistry
+        studyType: M.Sc.
+        start_date: 2020
+        end_date: 2022
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Master's thesis: _Exploring multifidelity machine learning for chemical shift predictions_."
+
+      - institution: Technical University of Darmstadt
+        location: Darmstadt, Germany
+        url: https://www.tu-darmstadt.de/
+        area: Chemistry
+        studyType: B.Sc.
+        start_date: 2016
+        end_date: 2020
+        highlights:
+          - "Bachelor's thesis: _Following chemical reactions using dDNP NMR spectroscopy_."
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: EPFL Lausanne, labCOSMO (Group of Prof. Michele Ceriotti)
+        position: Doctoral Researcher
+        location: Lausanne, Switzerland
+        start_date: 2023
+        end_date: present
         highlights:
-          - Relativity
-          - Description 2.
+          - Develop uncertainty-quantification methods for machine-learning interatomic potentials.
+          - Build deep-learning models for NMR chemical shieldings in molecular organic solids (ShiftML).
+          - Develop universal machine learning potentials for condensed organic matter (PET-MOLS).
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: TU Darmstadt, Krewald group, in collaboration with Janssen Pharmaceutica
+        position: Working Student
+        location: Darmstadt, Germany
+        start_date: 2019
+        end_date: 2021
         highlights:
-          - Description 1.
-          - Description 2.
+          - Computational study of stereoselective C-glycosylation reactions.
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
+    Invited Talks:
+      - bullet: "**PASC 2026** - Minisymposium, _Trustworthy MLIPs - End-to-End Uncertainty Quantification for Atomistic Machine Learning_. Bern, 2026."
+      - bullet: "**CAMD DTU seminar** - _End-to-End Uncertainty Quantification for Atomistic Machine Learning_. Copenhagen, 2026."
+      - bullet: "**CCP-NC Seminar** - _Overview of ShiftML, QNC-NMR and open questions_. Online, 2026."
+      - bullet: "**XXVI Swiss NMR Symposium** - _Quantum-corrected NMR crystallography at scale_. Lausanne, 2026."
+      - bullet: "**CECAM Workshop on Uncertainty Quantification in Atomistic Modeling** - _Practical uncertainty quantification for atomistic simulations with last-layer ensembles_. Lausanne, 2025."
+      - bullet: "**Machine Learning for NMR Crystallography Workshop, CCP-NC** - _Advancing chemical shielding predictions in organic solids_. Manchester, 2025."
+      - bullet: "**SIAM Conference on Mathematical Aspects of Materials Science** - _Uncertainty quantification by direct propagation of shallow ensembles_. Pittsburgh, 2024."
 
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
+    Contributed Talks:
+      - bullet: "**DPG Spring Meeting** - _NMR crystallography at finite temperatures_. Dresden, 2026."
+      - bullet: "**NMRlipids Database Hackathon** - _Chemical shielding predictions in organic solids and beyond_. Bergen, 2025."
+      - bullet: "**DPG Spring Meeting** - _Advancing chemical shielding predictions in organic solids_. Regensburg, 2025."
+      - bullet: "**DPG Spring Meeting** - _Uncertainty quantification by direct propagation of shallow ensembles_. Berlin, 2024."
+      - bullet: "**Workshop on Uncertainty Quantification in Molecular Simulation, MPI Magdeburg** - _Uncertainty quantification by direct propagation of shallow ensembles_. 2024."
 
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
+    Teaching:
+      - bullet: "**EPFL** - MSE-211 Organic Chemistry Lab (2023, 2024, 2025), lab instructor (small-group teaching)."
+      - bullet: "**EPFL** - MSE-305 Introduction to Atomic-Scale Modeling (2024), teaching assistant."
+      - bullet: "**EPFL** - MSE-421 Statistical Thermodynamics (2025), teaching assistant."
+      - bullet: "**ICTP-MARVEL summer school** (2026), tutor."
+      - bullet: "**TUM** - Python programming for chemistry students (2022), tutor."
 
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-        highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+    Supervision and Mentoring:
+      - bullet: "I regularly supervise master's project students at labCOSMO for semester projects and summer internships."
+      - bullet: "Enrico Palermo, EPFL."
+      - bullet: "Yuxuan Zhang (formerly Hong Kong University, now University of Oxford), co-author of the ShiftML3 publication."
+      - bullet: "Aurélien Wohrer (formerly EPFL, now master's project at EMPA)."
+      - bullet: "Seiio Inoue (University of Tokyo), co-author of the QNC-NMR publication."
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
-
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
+    Outreach, Service and Reviewing:
+      - label: Industrial outreach
+        details: Merck Innovation Cup, 2022.
+      - label: Student outreach
+        details: Journée des gymnasiens, EPFL, 2025.
+      - label: Reviewing
+        details: JCTC (2024), Nature Communications (2026), JCP (2026).
 
     Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: Outside the lab
+        icon: fa-solid fa-music
+        keywords: "Music (trombone and guitar), sailing, running, hiking"

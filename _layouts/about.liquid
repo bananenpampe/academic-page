@@ -1,0 +1,168 @@
+---
+layout: default
+---
+{% comment %}
+  Local override of al_folio_core's `about` layout (gem version 1.0.15).
+
+  Differences from the gem version:
+  - Renders a full-width header image (page.banner, a file in assets/img/) above the
+    page, mirroring the banner used on my social profiles.
+  - Ships the styles for the banner and for the "Try my work on the web" card used
+    in _pages/about.md.
+
+  Everything else is kept identical to the gem so future gem upgrades are easy to
+  port. Re-run `bundle exec al-folio upgrade overrides audit` after bumping al_folio_core.
+{% endcomment %}
+
+<style>
+  .hero-banner {
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    max-height: 280px;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  .hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .try-card {
+    clear: both;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin: 2rem 0 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.75rem;
+    background: var(--global-card-bg-color);
+  }
+
+  .try-card-logo {
+    width: 110px;
+    flex: 0 0 auto;
+  }
+
+  .try-card-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.35rem;
+  }
+
+  .try-card p {
+    margin: 0 0 0.75rem;
+  }
+
+  .try-card-button {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    background: var(--global-theme-color);
+    color: var(--global-hover-text-color) !important;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+
+  .try-card-button:hover {
+    filter: brightness(1.1);
+  }
+
+  @media (max-width: 575px) {
+    .try-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+{% if page.banner %}
+  <div class="hero-banner">
+    <img src="{{ page.banner | prepend: '/assets/img/' | relative_url }}" alt="">
+  </div>
+{% endif %}
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
+        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+        {{ site.last_name }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+
+  <article>
+    {% if page.profile %}
+      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw"{% endcapture %}
+          {%
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+            cache_bust=true
+          %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="clearfix">{{ content }}</div>
+
+    <!-- News -->
+    {% if page.announcements and page.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+      </h2>
+      {% include news.liquid limit=true %}
+    {% endif %}
+
+    <!-- Latest posts -->
+    {% if page.latest_posts and page.latest_posts.enabled %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+      </h2>
+      {% include latest_posts.liquid %}
+    {% endif %}
+
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+      </h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+
+    <!-- Social -->
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% social_links %}</div>
+
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% if site.plugins contains 'al_newsletter' %}
+        {% include plugins/al_newsletter_form_center_margin.liquid %}
+      {% else %}
+        {% include newsletter.liquid center=true %}
+      {% endif %}
+    {% endif %}
+  </article>
+</div>
