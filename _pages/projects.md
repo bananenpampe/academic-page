@@ -6,11 +6,13 @@ description: My three main research themes. Each page has a comment section, so 
 nav: true
 nav_order: 2
 horizontal: false
-# Give every card the same image height so the titles line up across the row.
-# object-fit: contain keeps logos and wide images whole instead of cropping them.
+# Card layout: same image height everywhere so titles line up, a light divider
+# between thumbnail and text, and the GitHub link pinned to the lower-left corner.
 _styles: >
-  .projects .card figure { margin: 0; }
-  .projects .card-img-top { height: 220px; object-fit: contain; object-position: center; }
+  .projects .card figure { margin: 0; padding: 0.75rem; border-bottom: 1px solid var(--global-divider-color); }
+  .projects .card-img-top { height: 200px; object-fit: contain; object-position: center; }
+  .projects .card .card-body { display: flex; flex-direction: column; }
+  .projects .card .card-body > .row { margin-top: auto; padding-top: 0.75rem; }
 ---
 
 <!-- pages/projects.md -->
