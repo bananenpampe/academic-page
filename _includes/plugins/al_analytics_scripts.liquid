@@ -1,0 +1,27 @@
+{% comment %}
+  Local override of al_folio_core's `plugins/al_analytics_scripts.liquid` (gem 1.0.15).
+
+  Identical to the gem's parse-safe wrapper for the al_analytics tag, plus the
+  Plausible snippet below, since al_analytics has no Plausible provider. Plausible
+  is cookie-less and does not need consent under the cookie-consent flag.
+  Re-run `bundle exec al-folio upgrade overrides audit` after bumping al_folio_core.
+{% endcomment %}
+{% al_analytics_scripts %}
+
+{% if jekyll.environment == 'production' %}
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-SbUMdCk52ueYfHqtyZ284.js"></script>
+  <script>
+    window.plausible =
+      window.plausible ||
+      function () {
+        (plausible.q = plausible.q || []).push(arguments);
+      };
+    plausible.init =
+      plausible.init ||
+      function (i) {
+        plausible.o = i || {};
+      };
+    plausible.init();
+  </script>
+{% endif %}
