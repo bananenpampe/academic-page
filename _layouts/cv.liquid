@@ -58,13 +58,24 @@ layout: default
   .cv .list-group-item .date-column {
     flex: 0 0 24%;
     max-width: 24%;
+    width: auto;
     padding-left: 0;
+    padding-top: 4px; /* centers the badge on the title's first line (the text column carries an 8px top margin) */
     text-align: left;
+    transform: none; /* the gem shifts this column by translate(-15px, -5px), which pushes it past the card padding */
   }
 
   .cv .list-group-item .date-column + div {
     flex: 0 0 76%;
     max-width: 76%;
+    margin-top: 0 !important; /* the gem adds mt-2 below the md breakpoint, which pushes the title under the badge */
+  }
+
+  /* Belt and braces: no inherited list/row offsets, whatever the compat CSS does. */
+  .cv .card > div > ul.list-group,
+  .cv .list-group-item {
+    margin-left: 0;
+    padding-left: 0;
   }
 
   .cv .list-group-item p.location {
