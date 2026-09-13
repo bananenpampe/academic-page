@@ -9,6 +9,8 @@ layout: default
     page, mirroring the banner used on my social profiles.
   - Ships the styles for the banner and for the "Try my work on the web" card used
     in _pages/about.md.
+  - Renders the profile picture before the header (instead of inside the article)
+    so its top edge lines up with the top of the name.
   - Pipes the page content, the profile info, the social bar and the contact note
     through al_email_protect's rewrite filter, so every mailto: link on the landing
     page is split at build time when `protect_email: true` (no plaintext address
@@ -87,6 +89,14 @@ layout: default
      line. The plugin emits "[at]" / "[dot]" separators as text; here they are
      collapsed and redrawn with CSS as "@" / "." so the address reads naturally
      while the HTML still contains no scrapable user@host string. */
+  /* The picture floats beside the name; nudge it down by the h1's half-leading so
+     its top edge sits on the cap height of "Matthias" rather than on the line box. */
+  @media (min-width: 576px) {
+    .profile {
+      margin-top: 0.5rem;
+    }
+  }
+
   .profile .more-info {
     font-family: inherit;
     font-size: 0.85rem;
@@ -122,6 +132,28 @@ layout: default
 {% endif %}
 
 <div class="post">
+  {% if page.profile %}
+    <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      {% if page.profile.image %}
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        {% if page.profile.image_circular %}
+          {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+        {% else %}
+          {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+        {% endif %}
+        {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw"{% endcapture %}
+        {%
+          include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+          cache_bust=true
+        %}
+      {% endif %}
+      {% if page.profile.more_info %}
+        <div class="more-info">{{ page.profile.more_info | al_email_protect_html }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
@@ -135,28 +167,6 @@ layout: default
   </header>
 
   <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info | al_email_protect_html }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
-
     <div class="clearfix">{{ content | al_email_protect_html }}</div>
 
     <!-- News -->
