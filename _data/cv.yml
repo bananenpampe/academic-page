@@ -1,6 +1,5 @@
 cv:
-  name: Matthias Kellner
-  label: PhD Student in Computational Materials Science
+  name: Matthias Kellner<br><span class="font-weight-light">PhD student in computational materials science</span>
   location: Lausanne, Switzerland
   website: https://kellner.science
   image: ""

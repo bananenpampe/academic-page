@@ -6,6 +6,11 @@ description: My three main research themes. Each page has a comment section, so 
 nav: true
 nav_order: 2
 horizontal: false
+# Give every card the same image height so the titles line up across the row.
+# object-fit: contain keeps logos and wide images whole instead of cropping them.
+_styles: >
+  .projects .card figure { margin: 0; }
+  .projects .card-img-top { height: 220px; object-fit: contain; object-position: center; }
 ---
 
 <!-- pages/projects.md -->

@@ -2,7 +2,7 @@
 layout: page
 title: Uncertainty quantification
 description: Fast, propagatable uncertainty estimates for machine learning interatomic potentials.
-img: assets/img/uq_band.svg
+img: assets/img/PET_UAFD_thumb.png
 importance: 1
 github: https://github.com/bananenpampe/DPOSE
 related_publications: true
