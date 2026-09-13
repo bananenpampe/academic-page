@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Chemical shielding predictions - ShiftML
+title: ShiftML
 description: Universal chemical shielding predictors for organic solids, powering NMR crystallography.
 img: assets/img/shiftml_logo.svg
 importance: 2

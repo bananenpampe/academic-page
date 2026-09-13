@@ -12,7 +12,8 @@ _styles: >
   .projects .card figure { margin: 0; padding: 0.75rem; border-bottom: 1px solid var(--global-divider-color); }
   .projects .card-img-top { height: 200px; object-fit: contain; object-position: center; }
   .projects .card .card-body { display: flex; flex-direction: column; }
-  .projects .card .card-body > .row { margin-top: auto; padding-top: 0.75rem; }
+  .projects .card .card-body > .row { margin: auto 0 0 0 !important; padding-top: 0.75rem; }
+  .projects .card .github-icon { padding-left: 0; margin-left: 0; }
 ---
 
 <!-- pages/projects.md -->
