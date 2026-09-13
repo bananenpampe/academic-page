@@ -82,6 +82,37 @@ layout: default
       align-items: flex-start;
     }
   }
+
+  /* Contact lines under the profile picture: keep the protected address on one
+     line. The plugin emits "[at]" / "[dot]" separators as text; here they are
+     collapsed and redrawn with CSS as "@" / "." so the address reads naturally
+     while the HTML still contains no scrapable user@host string. */
+  .profile .more-info {
+    font-family: inherit;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .profile .more-info p {
+    display: block; /* one contact line per paragraph (the gem makes them inline-block) */
+  }
+
+  .profile .more-info .al-email-sep {
+    font-size: 0;
+  }
+
+  .profile .more-info .al-email-sep::after {
+    font-size: 0.85rem;
+  }
+
+  /* The link's children are: text "matthias.kellner", sep "[at]", span "epfl", sep "[dot]", span "ch" */
+  .profile .more-info a.al-email-protect > span.al-email-sep:first-child::after {
+    content: '@';
+  }
+
+  .profile .more-info a.al-email-protect > span.al-email-sep:not(:first-child)::after {
+    content: '.';
+  }
 </style>
 
 {% if page.banner %}

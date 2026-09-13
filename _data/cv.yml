@@ -95,12 +95,9 @@ cv:
       - bullet: "**TUM** - Python programming for chemistry students (2022), tutor."
 
     Outreach, Service and Reviewing:
-      - label: Industrial outreach
-        details: Merck Innovation Cup, 2022.
-      - label: Student outreach
-        details: Journée des gymnasiens, EPFL, 2025.
-      - label: Reviewing
-        details: JCTC (2024), Nature Communications (2026), JCP (2026).
+      - bullet: "**Industrial outreach** - Merck Innovation Cup, 2022."
+      - bullet: "**Student outreach** - Journée des gymnasiens, EPFL, 2025."
+      - bullet: "**Reviewing** - JCTC (2024), Nature Communications (2026), JCP (2026)."
 
     Interests:
       - name: Outside the lab

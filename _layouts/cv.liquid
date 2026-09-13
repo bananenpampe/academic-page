@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{% comment %}
+  Local override of al_folio_core's `cv` layout (gem version 1.0.15).
+
+  Differences from the gem version:
+  - Adds a style block that (a) removes the stray list bullets in front of each
+    CV entry, (b) aligns the date badge with the entry title, and (c) drops the
+    hairline above the date column.
+  - Honors `page._styles` like the page/post layouts do.
+
+  Everything else is identical to the gem. Re-run
+  `bundle exec al-folio upgrade overrides audit` after bumping al_folio_core.
+{% endcomment %}
+
+<style>
+  /* Entry lists are <ul class="list-group">; without Bootstrap's reset the browser
+     draws a bullet in front of every entry. */
+  .cv ul.list-group {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .cv .list-group-item {
+    list-style: none;
+  }
+
+  /* Date column: no hairline above the badge, badge and title on one line. */
+  .cv .list-group-item table.table-cv {
+    border-collapse: collapse;
+  }
+
+  .cv .list-group-item table.table-cv td {
+    border-top: 0;
+    padding: 0;
+  }
+
+  .cv .list-group-item .date-column .badge {
+    display: inline-block;
+    line-height: 1.2;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+  }
+
+  .cv .list-group-item h6.title {
+    margin-top: 0;
+    line-height: 1.2;
+  }
+
+  .cv .list-group-item p.location {
+    margin-top: 0.15rem;
+    margin-bottom: 0;
+  }
+</style>
+
+{% if page._styles %}
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+{% assign cv_feature_enabled = site.al_folio.features.cv.enabled | default: true %}
+
+{% if site.plugins contains 'al_folio_cv' and cv_feature_enabled %}
+  {% al_folio_cv_render %}
+{% else %}
+  <div class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-description">CV rendering is unavailable.</p>
+    </header>
+    <article>
+      <p>Enable the <code>al_folio_cv</code> plugin and set <code>al_folio.features.cv.enabled: true</code> to render this page.</p>
+    </article>
+  </div>
+{% endif %}
