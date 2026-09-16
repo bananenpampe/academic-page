@@ -28,7 +28,7 @@ Comments use GitHub Discussions on `bananenpampe/academic-page` (category "Annou
 
 - `deploy.yml` builds on every push to `main` and force-pushes `_site` to `gh-pages`.
 - GitHub Pages serves `gh-pages` on the custom domain `kellner.science` (`CNAME` in the repo root, copied into the build via `keep_files`).
-- `update-citations.yml` refreshes `_data/citations.yml` from Google Scholar on a schedule and commits it.
+- There is no scheduled citation-count job; the publications page links to Google Scholar for live counts.
 
 ## Gem version pins
 
