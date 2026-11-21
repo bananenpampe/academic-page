@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I contributed to the new preprint **Unconstrained learning of equivariant atomistic properties**, which shows that the unconstrained PET architecture learns dipoles, polarizabilities, NMR shielding tensors and electron densities accurately and at low cost. Read it on [arXiv](https://arxiv.org/abs/2610.31183)!
+I contributed to the new preprint **Unconstrained learning of equivariant atomistic properties**. Read it on [arXiv](https://arxiv.org/abs/2610.31183)!
